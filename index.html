@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exemplo de HTML Simples</title>
+</head>
+<body>
+  
+    <p>
+        import time
+        import os
+        import ctypes
+        import random
+        import adbutils
+        import threading
+        import requests
+        from bs4 import BeautifulSoup
+        import re
+        from datetime import datetime
+        # Function to set the command prompt window title
+        def set_console_title(title):
+            ctypes.windll.kernel32.SetConsoleTitleW(title)
+        
+        import uiautomator2 as u2
+        import xml.etree.ElementTree as ET
+        import re
+        import time
+        from colorama import init, Fore, Style
+        from uiautomator2 import Device
+        import ctypes
+        from ctypes import wintypes
+        import datetime
+        import os
+        import subprocess
+        import uiautomator2
+        import math
+        import requests
+        import colorama
+        import datetime
+        import time
+        # Obtém o tempo atual antes do início do programa
+        start_time = time.time()
+        # Função para imprimir o tempo atual formatado com cor
+        def print_current_time():
+            current_time = datetime.datetime.now().strftime("%H:%M:%S")
+            return f"[{current_time}]"
+        
+        
+        ################################################################
+        
+        # Obtém o tempo atual antes do início do programa
+        start_time = time.time()
+        
+        # Função para imprimir o tempo atual formatado com cor
+        def print_current_time():
+            current_time = datetime.datetime.now().strftime("%H:%M:%S")
+            return f"[{current_time}]"
+        
+        # Imprima o texto "WPprojetos" em azul
+        print(Fore.BLUE + "    WPprojetos " + Style.RESET_ALL)
+        
+        def list_adb_devices():
+            stream = os.popen('    adb devices')
+            output = stream.read()
+            lines = output.strip().split('\n')
+            devices = []
+            for line in lines[1:]:
+                device = line.split('\t')[0]
+                devices.append(device)
+            return devices
+        
+        devices = list_adb_devices()
+        print("    Connected devices:")
+        for i, device in enumerate(devices):
+            print(f"    {i+1}. {device}")  # Adiciona um espaço antes do número e ponto
+        
+        choice = int(input("    Qual dispositivo: "))
+        selected_device = devices[choice-1]
+        print(f"    Vamos lá: {selected_device}")
+        # Set the command prompt window title to the selected device
+        set_console_title(f": {selected_device}")
+        device = u2.connect(selected_device)</p>
+
+</body>
+</html>
